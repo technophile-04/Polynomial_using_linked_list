@@ -179,15 +179,25 @@ struct Node* addPolynomials(struct Node *headP1, struct Node *headP2){
 
     while(headP1 != NULL){
         struct Node* newNode = createNode(headP1->coefficient, headP1->power);
-        finalTail->link = newNode;
-        finalTail =  newNode;
+        if(finalHead == NULL){
+            finalHead = newNode;
+            finalTail = finalHead;
+        }else{
+            finalTail->link = newNode;
+            finalTail =  newNode;
+        }
         headP1 = headP1->link;
     }
 
     while(headP2 != NULL){
         struct Node* newNode = createNode(headP2->coefficient, headP2->power);
-        finalTail->link = newNode;
-        finalTail =  newNode;
+        if(finalHead == NULL){
+            finalHead = newNode;
+            finalTail = finalHead;
+        }else{
+            finalTail->link = newNode;
+            finalTail =  newNode;
+        }
         headP2 = headP2->link;
     }
 
@@ -249,15 +259,25 @@ struct Node* subtractPolynomials(struct Node *headP1, struct Node *headP2){
 
     while(headP1 != NULL){
         struct Node* newNode = createNode(headP1->coefficient, headP1->power);
-        finalTail->link = newNode;
-        finalTail =  newNode;
+        if(finalHead == NULL){
+            finalHead = newNode;
+            finalTail = finalHead;
+        }else{
+            finalTail->link = newNode;
+            finalTail =  newNode;
+        }
         headP1 = headP1->link;
     }
 
     while(headP2 != NULL){
         struct Node* newNode = createNode(headP2->coefficient, headP2->power);
-        finalTail->link = newNode;
-        finalTail =  newNode;
+        if(finalHead == NULL){
+            finalHead = newNode;
+            finalTail = finalHead;
+        }else{
+            finalTail->link = newNode;
+            finalTail =  newNode;
+        }
         headP2 = headP2->link;
     }
 
@@ -364,15 +384,12 @@ int main()
     printPolynomial(headP2);
 
     headP3 = multiplyPolynomials(headP3, headP1, headP2);
-    headP4 = addPolynomials(headP1, headP2);
-    headP5 = subtractPolynomials(headP1, headP2);
-
     printf("Output of multiplication:\n");
     printPolynomial(headP3);
-
+    headP4 = addPolynomials(headP1, headP2);
     printf("Output of addition:\n");
     printPolynomial(headP4);
-
+    headP5 = subtractPolynomials(headP1, headP2);
     printf("Output of subtraction:\n");
     printPolynomial(headP5);
 
