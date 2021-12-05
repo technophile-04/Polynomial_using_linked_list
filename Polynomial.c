@@ -371,10 +371,10 @@ int main()
     struct Node *headP1 = NULL, *headP2 = NULL, *headP3 = NULL, *headP4 = NULL, *headP5 = NULL;
 
     
-    printf("Enter the number of coefficients in the multiplicand:");
+    printf("Enter the number of coefficients in the first polynomial:");
     headP1 = getPolynomialFromUser();
     
-    printf("Enter the number of coefficients in the multiplier:");
+    printf("Enter the number of coefficients in the second polynomial:");
     headP2 = getPolynomialFromUser();
 
     printf("Polynomial Expression 1: ");
